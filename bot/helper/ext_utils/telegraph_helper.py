@@ -55,6 +55,48 @@ class TelegraphHelper:
             sleep(st.retry_after)
         return self.edit_page(path, title, content)
 
+
+
+
+
+    def edit_telegraph(self, path, telegraph_content):
+        TITLE_NAME = '{TITLE_NAME}'
+        nxt_page = 1
+        prev_page = 0
+        num_of_path = len(path)
+        for content in telegraph_content :
+            if nxt_page == 1 :
+                content += f'<b><a href="https://graph.org/{path[nxt_page]}">Next</a></b>'
+                nxt_page += 1
+            else :
+                if prev_page <= num_of_path:
+                    content += f'<b><a href="https://graph.org/{path[prev_page]}">Prev</a></b>'
+                    prev_page += 1
+                if nxt_page < num_of_path:
+                    content += f'<b> | <a href="https://graph.org/{path[nxt_page]}">Next</a></b>'
+                    nxt_page += 1
+            self.edit_page(
+                path = path[prev_page],
+                title = f"'{TITLE_NAME}' Torrent Search",
+                content=content
+            )
+        return
+
+try:
+    AUTHOR_NAME = '{AUTHOR_NAME}'
+    AUTHOR_URL = '{AUTHOR_URL}'
+    telegraph=TelegraphHelper(f'{AUTHOR_NAME}', f'{AUTHOR_URL}')
+except Exception as err:
+    LOGGER.warning(f"Can't Create Telegraph Account: {err}")
+    telegraph = None
+    pass
+
+
+
+
+
+
+
     def edit_telegraph(self, path, telegraph_content):
         nxt_page = 1
         prev_page = 0
