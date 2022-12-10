@@ -79,14 +79,3 @@ class TelegraphHelper:
 
 
 telegraph=TelegraphHelper(f'{AUTHOR_NAME}', f'{AUTHOR_URL}')
-
-
-
-try:
-    AUTHOR_NAME = ['AUTHOR_NAME']
-    AUTHOR_URL = ['AUTHOR_URL']
-    telegraph=TelegraphHelper(f"{['AUTHOR_NAME']}", f"{['AUTHOR_URL']}")
-except Exception as err:
-    LOGGER.warning(f"Can't Create Telegraph Account: {err}")
-    telegraph = None
-    pass
