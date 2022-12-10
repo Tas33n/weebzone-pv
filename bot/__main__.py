@@ -396,13 +396,10 @@ help_string_telegraph_user = f'''
 <br><br>
 • <b>/weebhelp</b>: Okatu helper
 '''
-try:
-    help_user = telegraph.create_page(
-        title=f"{TITLE_NAME} Help",
-        content=help_string_telegraph_user)["path"]
-except Exception as err:
-    LOGGER.warning(f"Telegraph Error: {err}")
-
+help_user = telegraph.create_page(
+    title=f"{TITLE_NAME} Help",
+    content=help_string_telegraph_user)["path"]
+    
 help_string_telegraph_admin = f'''
 <b><u>🛡️ Admin Commands</u></b>
 <br><br>
@@ -432,12 +429,10 @@ help_string_telegraph_admin = f'''
 '''
 
 
-try:
-    help_admin = telegraph.create_page(
-        title=f'{TITLE_NAME} Help',
-        content=help_string_telegraph_admin)["path"]
-except Exception as err:
-    LOGGER.warning(f"Telegraph Error: {err}")
+help_admin = telegraph.create_page(
+    title=f'{TITLE_NAME} Help',
+    content=help_string_telegraph_admin)["path"]
+
 
 
 def bot_help(update, context):
