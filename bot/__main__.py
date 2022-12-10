@@ -398,7 +398,7 @@ help_string_telegraph_user = f'''
 '''
 
 help_user = telegraph.create_page(
-    title=f"{config_dict['TITLE_NAME']} Help",
+    title=f"{TITLE_NAME} Help",
     content=help_string_telegraph_user)["path"]
 
 help_string_telegraph_admin = f'''
@@ -430,20 +430,20 @@ help_string_telegraph_admin = f'''
 '''
 
 help_admin = telegraph.create_page(
-    title=f"{config_dict['TITLE_NAME']} Help",
+    title=f"{TITLE_NAME} Help",
     content=help_string_telegraph_admin)["path"]
 
 
 def bot_help(update, context):
     button = ButtonMaker()
-    if config_dict['EMOJI_THEME']:
+    if EMOJI_THEME is True:
         button.buildbutton("👤 User", f"https://graph.org/{help_user}")
-        button.buildbutton("Admin 🛡️", f"https://graph.org/{help_admin}")
+        button.buildbutton("🛡️ Admin", f"https://graph.org/{help_admin}")
     else:
         button.buildbutton("User", f"https://graph.org/{help_user}")
         button.buildbutton("Admin", f"https://graph.org/{help_admin}")
     sendMarkup(help_string, context.bot, update.message, button.build_menu(2))
-    
+
 if SET_BOT_COMMANDS:
     botcmds = [
         (f'{BotCommands.MirrorCommand}', 'Mirror'),
