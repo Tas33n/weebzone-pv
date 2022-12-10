@@ -397,9 +397,13 @@ help_string_telegraph_user = f'''
 • <b>/weebhelp</b>: Okatu helper
 '''
 
-help_user = telegraph.create_page(
-    title=f"{TITLE_NAME} Help",
-    content=help_string_telegraph_user)["path"]
+try:
+    help_admin = telegraph.create_page(
+        title=f'{TITLE_NAME} HELP',
+        content=help_string_telegraph_admin,
+    )["path"]
+except Exception as err:
+    LOGGER.warning(f"Telegraph Error: {err}")
 
 help_string_telegraph_admin = f'''
 <b><u>🛡️ Admin Commands</u></b>
@@ -429,20 +433,26 @@ help_string_telegraph_admin = f'''
 • <b>/{BotCommands.LogCommand}</b>: Get a log file of the bot. Handy for getting crash reports
 '''
 
-help_admin = telegraph.create_page(
-    title=f"{TITLE_NAME} Help",
-    content=help_string_telegraph_admin)["path"]
+
+try:
+    help_admin = telegraph.create_page(
+        title=f'{TITLE_NAME} HELP',
+        content=help_string_telegraph_admin,
+    )["path"]
+except Exception as err:
+    LOGGER.warning(f"Telegraph Error: {err}")
 
 
 def bot_help(update, context):
     button = ButtonMaker()
     if EMOJI_THEME is True:
         button.buildbutton("👤 User", f"https://graph.org/{help_user}")
-        button.buildbutton("🛡️ Admin", f"https://graph.org/{help_admin}")
+        button.buildbutton("Admin 🛡️", f"https://graph.org/{help_admin}")
     else:
         button.buildbutton("User", f"https://graph.org/{help_user}")
         button.buildbutton("Admin", f"https://graph.org/{help_admin}")
     sendMarkup(help_string, context.bot, update.message, button.build_menu(2))
+
 
 if SET_BOT_COMMANDS:
     botcmds = [
