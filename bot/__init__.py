@@ -61,36 +61,6 @@ except:
     HEROKU_APP_NAME = None
     HEROKU_API_KEY = None
 
-
-if DATABASE_URL:
-    conn = MongoClient(DATABASE_URL)
-    db = conn.mltb
-    if config_dict := db.settings.config.find_one({'_id': bot_id}):  #retrun config dict (all env vars)
-        del config_dict['_id']
-        for key, value in config_dict.items():
-            environ[key] = str(value)
-    if pf_dict := db.settings.files.find_one({'_id': bot_id}):
-        del pf_dict['_id']
-        for key, value in pf_dict.items():
-            if value:
-                file_ = key.replace('__', '.')
-                with open(file_, 'wb+') as f:
-                    f.write(value)
-    if a2c_options := db.settings.aria2c.find_one({'_id': bot_id}):
-        del a2c_options['_id']
-        aria2_options = a2c_options
-    if qbit_opt := db.settings.qbittorrent.find_one({'_id': bot_id}):
-        del qbit_opt['_id']
-        qbit_options = qbit_opt
-    conn.close()
-    BOT_TOKEN = environ.get('BOT_TOKEN', '')
-    bot_id = int(BOT_TOKEN.split(':', 1)[0])
-    DATABASE_URL = environ.get('DATABASE_URL', '')
-else:
-    config_dict = {}
-
-    
-
 PRE_DICT = {}
 SUF_DICT = {}
 CAP_DICT = {}

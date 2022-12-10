@@ -1,15 +1,18 @@
+# Implement By - @VarnaX-279
+
 from string import ascii_letters
 from random import SystemRandom
+
 from time import sleep
 from telegraph import Telegraph
 from telegraph.exceptions import RetryAfterError
 
-from bot import LOGGER, config_dict
+from bot import LOGGER, AUTHOR_NAME, AUTHOR_URL, TITLE_NAME
 
 
 class TelegraphHelper:
     def __init__(self, author_name=None, author_url=None):
-        self.telegraph = Telegraph(domain='graph.org')
+        self.telegraph = Telegraph()
         self.short_name = ''.join(SystemRandom().choices(ascii_letters, k=8))
         self.access_token = None
         self.author_name = author_name
@@ -53,7 +56,6 @@ class TelegraphHelper:
         return self.edit_page(path, title, content)
 
     def edit_telegraph(self, path, telegraph_content):
-        TITLE_NAME = config_dict['TITLE_NAME']
         nxt_page = 1
         prev_page = 0
         num_of_path = len(path)
@@ -70,10 +72,11 @@ class TelegraphHelper:
                     nxt_page += 1
             self.edit_page(
                 path = path[prev_page],
-                title = f"{config_dict['TITLE_NAME']} Torrent Search",
+                title = f"{TITLE_NAME} Torrent Search",
                 content=content
             )
         return
+
 
 try:
     AUTHOR_NAME = config_dict['AUTHOR_NAME']
