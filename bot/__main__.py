@@ -151,7 +151,7 @@ def start(update, context):
     buttons = ButtonMaker()
     if config_dict['EMOJI_THEME']:
         buttons.buildbutton(f"😎 {config_dict['START_BTN1_NAME']}", f"{config_dict['START_BTN1_URL']}")
-        buttons.buildbutton(f"🔥 {config_dict['START_BTN2_NAME']}", f"{config_dict['START_BTN2_URL']}")
+        buttons.buildbutton(f"{config_dict['START_BTN2_NAME'] 🔥}", f"{config_dict['START_BTN2_URL']}")
     else:
         buttons.buildbutton(f"{config_dict['START_BTN1_NAME']}", f"{config_dict['START_BTN1_URL']}")
         buttons.buildbutton(f"{config_dict['START_BTN2_NAME']}", f"{config_dict['START_BTN2_URL']}")
@@ -165,7 +165,7 @@ Type /{BotCommands.HelpCommand} to get a list of available commands
         else:
             sendMessage(start_string, context.bot, update.message, reply_markup)
     else:
-        text = f"Not Authorized user, deploy your own mirror bot"
+        text = f"Not Authorized User ⚠"
         if config_dict['PICS']:
             sendPhoto(text, context.bot, update.message, rchoice(config_dict['PICS']), reply_markup)
         else:
@@ -192,12 +192,12 @@ def restart(update, context):
 def ping(update, context):
     if config_dict['EMOJI_THEME']:
         start_time = int(round(time() * 1000))
-        reply = sendMessage("Starting_Ping ⛔", context.bot, update.message)
+        reply = sendMessage("Starting Ping ⛔", context.bot, update.message)
         end_time = int(round(time() * 1000))
         editMessage(f'{end_time - start_time} ms 🔥', reply)
     else:
         start_time = int(round(time() * 1000))
-        reply = sendMessage("Starting_Ping ", context.bot, update.message)
+        reply = sendMessage("Starting Ping ", context.bot, update.message)
         end_time = int(round(time() * 1000))
         editMessage(f'{end_time - start_time} ms ', reply)
 
@@ -206,8 +206,8 @@ def log(update, context):
 
 
 help_string = '''
-<b><a href='https://github.com/weebzone/WZML'>WeebZone</a></b> - The Ultimate Telegram MIrror-Leech Bot to Upload Your File & Link in Google Drive & Telegram
-Choose a help category:
+<b><a href='https://telegram.me/Nanthakps'>Nanthakps</a></b> - The Ultimate Telegram Mirror-Leech Bot to Upload Your File & Link in Google Drive & Telegram\
+\n\n<b>Choose A Help Category:</b>
 '''
 
 help_string_telegraph_user = f'''
@@ -239,19 +239,19 @@ help_string_telegraph_user = f'''
 <br><br>
 • <b>/{BotCommands.QbUnzipLeechCommand[0]}</b> [magnet_link][torrent_file][torrent_file_url]: Start leeching to Telegram using qBittorrent and upload the file/folder extracted from any archive extension
 <br><br>
+• <b>/{BotCommands.LeechWatchCommand[0]}</b> [yt-dlp supported link]: Leech yt-dlp supported link
+<br><br>
+• <b>/{BotCommands.ZipLeechWatchCommand[0]}</b> [yt-dlp supported link]: Leech yt-dlp supported link as zip
+<br><br>
+• <b>/{BotCommands.WatchCommand[0]}</b> [yt-dlp supported link]: Mirror yt-dlp supported link. Send <b>/{BotCommands.WatchCommand[0]}</b> for more help
+<br><br>
+• <b>/{BotCommands.ZipWatchCommand[0]}</b> [yt-dlp supported link]: Mirror yt-dlp supported link as zip
+<br><br>
 • <b>/{BotCommands.CloneCommand[0]}</b> [drive_url][gdtot_url]: Copy file/folder to Google Drive
 <br><br>
 • <b>/{BotCommands.CountCommand}</b> [drive_url][gdtot_url]: Count file/folder of Google Drive
 <br><br>
 • <b>/{BotCommands.DeleteCommand}</b> [drive_url]: Delete file/folder from Google Drive (Only Owner & Sudo)
-<br><br>
-• <b>/{BotCommands.YtdlCommand[0]}</b> [yt-dlp supported link]: Mirror yt-dlp supported link. Send <b>/{BotCommands.YtdlCommand[0]}</b> for more help
-<br><br>
-• <b>/{BotCommands.YtdlZipCommand[0]}</b> [yt-dlp supported link]: Mirror yt-dlp supported link as zip
-<br><br>
-• <b>/{BotCommands.YtdlLeechCommand[0]}</b> [yt-dlp supported link]: Leech yt-dlp supported link
-<br><br>
-• <b>/{BotCommands.YtdlZipLeechCommand[0]}</b> [yt-dlp supported link]: Leech yt-dlp supported link as zip
 <br><br>
 • <b>/{BotCommands.UserSetCommand[0]}</b>: Users settings
 <br><br>
@@ -267,13 +267,11 @@ help_string_telegraph_user = f'''
 <br><br>
 • <b>/{BotCommands.CancelMirror}</b>: Reply to the message by which the download was initiated and that download will be cancelled
 <br><br>
-• <b>/{BotCommands.CancelAllCommand}</b>: Cancel all downloading tasks
-<br><br>
-• <b>/{BotCommands.ListCommand}</b> [query]: Search in Google Drive(s)
+• <b>/{BotCommands.ListCommand[0]}</b> [query]: Search in Google Drive(s)
 <br><br>
 • <b>/{BotCommands.SearchCommand}</b> [query]: Search for torrents with API
-<br>sites: <code>rarbg, 1337x, yts, etzv, tgx, torlock, piratebay, nyaasi, ettv</code><br><br>
-• <b>/{BotCommands.StatusCommand}</b>: Shows a status of all the downloads
+<br><br>sites: <code>rarbg, 1337x, yts, etzv, tgx, torlock, piratebay, nyaasi, ettv</code><br>
+• <b>/{BotCommands.StatusCommand[0]}</b>: Shows a status of all the downloads
 <br><br>
 • <b>/{BotCommands.StatsCommand}</b>: Show Stats of the machine the bot is hosted on
 <br><br>
@@ -287,29 +285,27 @@ help_user = telegraph.create_page(
     content=help_string_telegraph_user)["path"]
 
 help_string_telegraph_admin = f'''
-<b><u>🛡️ Admin Commands</u></b>
+<b><u>Admin Commands 🛡️</u></b>
 <br><br>
 • <b>/{BotCommands.PingCommand}</b>: Check how long it takes to Ping the Bot
 <br><br>
-• <b>/{BotCommands.AuthorizeCommand}</b>: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
+• <b>/authorize</b>: Authorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
 <br><br>
-• <b>/{BotCommands.UnAuthorizeCommand}</b>: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
+• <b>/unauthorize</b>: Unauthorize a chat or a user to use the bot (Can only be invoked by Owner & Sudo of the bot)
 <br><br>
-• <b>/{BotCommands.UsersCommand}</b>: show users settings (Only Owner & Sudo).
+• <b>/users</b>: show users settings (Only Owner & Sudo).
 <br><br>
-• <b>/{BotCommands.AddSudoCommand}</b>: Add sudo user (Only Owner)
+• <b>/{BotCommands.AddSudoCommand[0]}</b>: Add sudo user (Only Owner)
 <br><br>
-• <b>/{BotCommands.RmSudoCommand}</b>: Remove sudo users (Only Owner)
+• <b>/{BotCommands.RmSudoCommand[0]}</b>: Remove sudo users (Only Owner)
 <br><br>
-• <b>/{BotCommands.PaidUsersCommand}</b>: Show Paid users (Only Owner & Sudo)
+• <b>/{BotCommands.PaidUsersCommand[0]}</b>: Show Paid users (Only Owner & Sudo)
 <br><br>
-• <b>/{BotCommands.AddPaidCommand}</b>: Authorize Paid users (Only Owner)
+• <b>/{BotCommands.AddPaidCommand[0]}</b>: Authorize Paid users (Only Owner)
 <br><br>
-• <b>/{BotCommands.RmPaidCommand}</b>: Unauthorize Paid users (Only Owner)
+• <b>/{BotCommands.RmPaidCommand[0]}</b>: Unauthorize Paid users (Only Owner)
 <br><br>
-• <b>/{BotCommands.RestartCommand}</b>: Restart and update the bot (Only Owner & Sudo)
-<br><br>
-• <b>/{BotCommands.LogCommand}</b>: Get a log file of the bot. Handy for getting crash reports
+• <b>/{BotCommands.RestartCommand[0]}</b>: Restart and update the bot (Only Owner & Sudo)
 '''
 
 help_admin = telegraph.create_page(
@@ -320,50 +316,46 @@ help_admin = telegraph.create_page(
 def bot_help(update, context):
     button = ButtonMaker()
     if config_dict['EMOJI_THEME']:
-        button.buildbutton("👤 User", f"https://telegra.ph/{help_user}")
-        button.buildbutton("🛡️ Admin", f"https://telegra.ph/{help_admin}")
+        button.buildbutton("👤 User", f"https://graph.org/{help_user}")
+        button.buildbutton("🛡️ Admin", f"https://graph.org/{help_admin}")
     else:
-        button.buildbutton("User", f"https://telegra.ph/{help_user}")
-        button.buildbutton("Admin", f"https://telegra.ph/{help_admin}")
+        button.buildbutton("User", f"https://graph.org/{help_user}")
+        button.buildbutton("Admin", f"https://graph.org/{help_admin}")
     sendMessage(help_string, context.bot, update.message, button.build_menu(2))
 
 
 if config_dict['SET_BOT_COMMANDS']:
     botcmds = [
         (f'{BotCommands.MirrorCommand[0]}', 'Mirror'),
-        (f'{BotCommands.ZipMirrorCommand[0]}','Mirror and upload as zip'),
         (f'{BotCommands.UnzipMirrorCommand[0]}','Mirror and extract files'),
+        (f'{BotCommands.ZipMirrorCommand[0]}','Mirror and upload as zip'),
         (f'{BotCommands.QbMirrorCommand[0]}','Mirror torrent using qBittorrent'),
-        (f'{BotCommands.QbZipMirrorCommand[0]}','Mirror torrent and upload as zip using qb'),
         (f'{BotCommands.QbUnzipMirrorCommand[0]}','Mirror torrent and extract files using qb'),
-        (f'{BotCommands.YtdlCommand[0]}','Mirror yt-dlp supported link'),
-        (f'{BotCommands.YtdlZipCommand[0]}','Mirror yt-dlp supported link as zip'),
-        (f'{BotCommands.CloneCommand[0]}','Copy file/folder to Drive'),
+        (f'{BotCommands.QbZipMirrorCommand[0]}','Mirror torrent and upload as zip using qb'),
         (f'{BotCommands.LeechCommand[0]}','Leech'),
-        (f'{BotCommands.ZipLeechCommand[0]}','Leech and upload as zip'),
         (f'{BotCommands.UnzipLeechCommand[0]}','Leech and extract files'),
+        (f'{BotCommands.ZipLeechCommand[0]}','Leech and upload as zip'),
         (f'{BotCommands.QbLeechCommand[0]}','Leech torrent using qBittorrent'),
-        (f'{BotCommands.QbZipLeechCommand[0]}','Leech torrent and upload as zip using qb'),
         (f'{BotCommands.QbUnzipLeechCommand[0]}','Leech torrent and extract using qb'),
-        (f'{BotCommands.YtdlLeechCommand[0]}','Leech yt-dlp supported link'),
-        (f'{BotCommands.YtdlZipLeechCommand[0]}','Leech yt-dlp supported link as zip'),
+        (f'{BotCommands.QbZipLeechCommand[0]}','Leech torrent and upload as zip using qb'),
+        (f'{BotCommands.WatchCommand[0]}','Mirror yt-dlp supported link'),
+        (f'{BotCommands.ZipWatchCommand[0]}','Mirror yt-dlp supported link as zip'),
+        (f'{BotCommands.LeechWatchCommand[0]}','Leech yt-dlp supported link'),
+        (f'{BotCommands.ZipLeechWatchCommand[0]}','Leech yt-dlp supported link as zip'),
         (f'{BotCommands.ScrapeCommand[0]}','Scrape Links from Website'),
+        (f'{BotCommands.CloneCommand[0]}','Copy file/folder to Drive'),
         (f'{BotCommands.CountCommand}','Count file/folder of Drive'),
         (f'{BotCommands.DeleteCommand}','Delete file/folder from Drive'),
         (f'{BotCommands.CancelMirror}','Cancel a task'),
-        (f'{BotCommands.CancelAllCommand}','Cancel all downloading tasks'),
-        (f'{BotCommands.ListCommand}','Search in Drive'),
+        (f'{BotCommands.ListCommand[0]}','Search in Drive'),
         (f'{BotCommands.SearchCommand}','Search in Torrent'),
         (f'{BotCommands.UserSetCommand[0]}','Users settings'),
-        (f'{BotCommands.BotSetCommand[0]}','BOT settings'),
-        (f'{BotCommands.StatusCommand}','Get mirror status message'),
+        (f'{BotCommands.StatusCommand[0]}','Get mirror status message'),
         (f'{BotCommands.SpeedCommand[0]}','Speedtest'),
-        (f'{BotCommands.WayBackCommand}','Internet Archive'),
         (f'{BotCommands.MediaInfoCommand[0]}','Get Information of telegram Files'),
-        (f'{BotCommands.HashCommand}','Get Hash of telegram Files'),
-        (f'{BotCommands.PingCommand}','Ping the bot'),
-        (f'{BotCommands.RestartCommand}','Restart the bot'),
         (f'{BotCommands.LogCommand}','Get the bot Log'),
+        (f'{BotCommands.RestartCommand[0]}','Restart the bot'),
+        (f'{BotCommands.PingCommand}','Ping the bot'),
         (f'{BotCommands.HelpCommand}','Get detailed help')
     ]
 

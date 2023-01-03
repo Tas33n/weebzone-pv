@@ -229,7 +229,7 @@ def imdb_callback(update, context):
                 LOGGER.exception(e)
                 app.send_message(chat_id=query.message.reply_to_message.chat_id, text=cap, reply_markup=InlineKeyboardMarkup(buttons))
         else:
-            app.send_photo(chat_id=query.message.reply_to_message.chat_id,  caption=cap, photo='https://telegra.ph/file/5af8d90a479b0d11df298.jpg', reply_markup=InlineKeyboardMarkup(buttons))
+            app.send_photo(chat_id=query.message.reply_to_message.chat_id,  caption=cap, photo='https://graph.org/file/5af8d90a479b0d11df298.jpg', reply_markup=InlineKeyboardMarkup(buttons))
         message.delete()
     else:
         query.answer()

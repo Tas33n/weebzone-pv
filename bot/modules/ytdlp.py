@@ -465,17 +465,15 @@ def ytdlleech(update, context):
 def ytdlZipleech(update, context):
     _ytdl(context.bot, update.message, True, True)
 
-
 authfilter = CustomFilters.authorized_chat if config_dict['WATCH_ENABLED'] is True else CustomFilters.owner_filter
-ytdl_handler = CommandHandler(BotCommands.YtdlCommand, ytdl,
+ytdl_handler = CommandHandler(BotCommands.WatchCommand, ytdl,
                                     filters=authfilter | CustomFilters.authorized_user)
-ytdl_zip_handler = CommandHandler(BotCommands.YtdlZipCommand, ytdlZip,
+ytdl_zip_handler = CommandHandler(BotCommands.ZipWatchCommand, ytdlZip,
                                     filters=authfilter | CustomFilters.authorized_user)
-ytdl_leech_handler = CommandHandler(BotCommands.YtdlLeechCommand, ytdlleech,
+ytdl_leech_handler = CommandHandler(BotCommands.LeechWatchCommand, ytdlleech,
                                     filters=authfilter | CustomFilters.authorized_user)
-ytdl_zip_leech_handler = CommandHandler(BotCommands.YtdlZipLeechCommand, ytdlZipleech,
+ytdl_zip_leech_handler = CommandHandler(BotCommands.ZipLeechWatchCommand, ytdlZipleech,
                                     filters=authfilter | CustomFilters.authorized_user)
-
 
 quality_handler = CallbackQueryHandler(select_format, pattern="qu")
 ytdl_confirm_handler = CallbackQueryHandler(ytdl_confirm, pattern="ytdlp")

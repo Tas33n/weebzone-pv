@@ -26,7 +26,7 @@ def picture_add(update, context):
         if not ospath.isdir(path):
             mkdir(path)
         photo_dir = resm.photo[-1].get_file().download()
-        editMessage("<b>Uploading to telegra.ph Server, Please Wait...</b>", editable)
+        editMessage("<b>Uploading to graph.org Server, Please Wait...</b>", editable)
         sleep(1)
         try:
             pic_add = f'https://graph.org{upload_file(photo_dir)[0]}'
@@ -37,7 +37,7 @@ def picture_add(update, context):
         finally:
             osremove(photo_dir)
     else:
-        help_msg = "<b>By Replying to Link (Telegra.ph or DDL):</b>"
+        help_msg = "<b>By Replying to Link (graph.org or DDL):</b>"
         help_msg += f"\n<code>/addpic" + " {link}" + "</code>\n"
         help_msg += "\n<b>By Replying to Photo on Telegram:</b>"
         help_msg += f"\n<code>/addpic" + " {photo}" + "</code>"

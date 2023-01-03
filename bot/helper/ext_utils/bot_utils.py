@@ -549,7 +549,7 @@ def change_filename(file_, user_id_, dirpath=None, up_path=None, all_edit=True, 
     if PREFIX:
         PREFIX = PREFIX.replace('\s', ' ')
         if not file_.startswith(PREFIX):
-            file_ = f"{PREFIX}{file_}"
+            file_ = f"{PREFIX} {file_}"
     if SUFFIX and not mirror_type:
         SUFFIX = SUFFIX.replace('\s', ' ')
         sufLen = len(SUFFIX)
