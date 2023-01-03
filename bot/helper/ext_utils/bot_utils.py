@@ -692,18 +692,12 @@ def bot_sys_stats():
         if stats.status() == MirrorStatus.STATUS_SPLITTING:
             num_split += 1
     return f"""
-Made with ❤️ by {config_dict['CREDIT_NAME']}
-
-Tasks: {tasks}
-
-CPU: {progress_bar(cpu)} {cpu}%
-RAM: {progress_bar(mem)} {mem}%
-DISK: {progress_bar(disk)} {disk}%
-
-SENT: {sent} | RECV: {recv}
-
-DLs: {num_active} | ULs: {num_upload} | SEEDING: {num_seeding}
-ZIP: {num_zip} | UNZIP: {num_unzip} | SPLIT: {num_split}
+🖥️ CPU: [ {t_core} Cores ] {cpuUsage}%
+🎮 RAM: [ {mem_t} ] {mem_p}%
+💾 Disk: [ {total} ] {disk}%
+🔺 Send: {sent}
+🔻 Recv : {recv}
+♻️ TOTAL : {tasks}
 """
     return stats
 dispatcher.add_handler(
