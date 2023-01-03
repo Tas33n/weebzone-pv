@@ -28,7 +28,7 @@ def category_change(update, context):
     elif len(context.args) == 0:
         msg = f'''Reply to an active /{BotCommands.SelectCategory} which was used to start the download or add gid along with {BotCommands.SelectCategory}
         This command mainly for change category incase you decided to change category from already added donwload.
-        But you can always use /{BotCommands.StatusCommand[0]} with to select category before download start.
+        But you can always use /{BotCommands.MirrorCommand[0]} with to select category before download start.
         '''
         sendMessage(msg, context.bot, update.message)
         return
