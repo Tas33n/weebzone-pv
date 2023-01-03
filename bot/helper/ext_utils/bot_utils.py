@@ -12,6 +12,10 @@ from urllib.request import urlopen
 from bot.helper.ext_utils.db_handler import DbManger
 from bot.helper.telegram_helper.bot_commands import BotCommands
 from bot.helper.telegram_helper.button_build import ButtonMaker
+
+import shutil
+import psutil
+
 from bot import LOGGER, CATEGORY_IDS, CATEGORY_INDEX, CATEGORY_NAMES, DATABASE_URL, dispatcher, download_dict, \
                 download_dict_lock, botStartTime, DOWNLOAD_DIR, user_data, config_dict
 from telegram.ext import CallbackQueryHandler
@@ -666,18 +670,28 @@ def pop_up_stats(update, context):
     stats = bot_sys_stats()
     query.answer(text=stats, show_alert=True)
 def bot_sys_stats():
-    sent = get_readable_file_size(net_io_counters().bytes_recv)
-    recv = get_readable_file_size(net_io_counters().bytes_sent)
+    currentTime = get_readable_time(time() - botStartTime)
+    cpuUsage = psutil.cpu_percent(interval=0.5)
+    p_core = psutil.cpu_count(logical=False)
+    t_core = psutil.cpu_count(logical=True)
+    disk = psutil.disk_usage(DOWNLOAD_DIR).percent
+    total, used, free = shutil.disk_usage(DOWNLOAD_DIR)
+    total = get_readable_file_size(total)
+    used = get_readable_file_size(used)
+    free = get_readable_file_size(free)
+    recv = get_readable_file_size(psutil.net_io_counters().bytes_recv)
+    sent = get_readable_file_size(psutil.net_io_counters().bytes_sent)
+    memory = psutil.virtual_memory()
+    mem_p = memory.percent
+    mem_t = get_readable_file_size(memory.total)
+    mem_a = get_readable_file_size(memory.available)
+    mem_u = get_readable_file_size(memory.used)
     num_active = 0
     num_upload = 0
-    num_seeding = 0
-    num_zip = 0
-    num_unzip = 0
     num_split = 0
+    num_extract = 0
+    num_archi = 0
     tasks = len(download_dict)
-    cpu = cpu_percent()
-    mem = virtual_memory().percent
-    disk = disk_usage("/").percent
     for stats in list(download_dict.values()):
         if stats.status() == MirrorStatus.STATUS_DOWNLOADING:
             num_active += 1
