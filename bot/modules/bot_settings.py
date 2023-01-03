@@ -25,7 +25,7 @@ default_values = {'AUTO_DELETE_MESSAGE_DURATION': 30,
                   'UPDATE_PACKAGES': 'False',
                   'UPSTREAM_BRANCH': 'master',
                   'UPSTREAM_REPO': 'https://github.com/Tamilupdates/weebzone',
-                  'STATUS_UPDATE_INTERVAL': 10,
+                  'STATUS_UPDATE_INTERVAL': 2,
                   'DOWNLOAD_DIR': '/usr/src/app/downloads/',
                   'TIME_GAP': -1,
                   'TG_SPLIT_SIZE': tgBotMaxFileSize,
@@ -210,7 +210,7 @@ def load_config():
 
     STATUS_UPDATE_INTERVAL = environ.get('STATUS_UPDATE_INTERVAL', '')
     if len(STATUS_UPDATE_INTERVAL) == 0:
-        STATUS_UPDATE_INTERVAL = 10
+        STATUS_UPDATE_INTERVAL = 2
     else:
         STATUS_UPDATE_INTERVAL = int(STATUS_UPDATE_INTERVAL)
     if len(download_dict) != 0:
