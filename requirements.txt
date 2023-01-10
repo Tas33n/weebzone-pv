@@ -41,4 +41,3 @@ urllib3
 waybackpy
 xattr
 yt-dlp
-
