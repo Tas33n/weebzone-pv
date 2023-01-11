@@ -317,7 +317,7 @@ def bot_help(update, context):
     button = ButtonMaker()
     if config_dict['EMOJI_THEME']:
         button.buildbutton("👤 User", f"https://graph.org/{help_user}")
-        button.buildbutton("🛡️ Admin", f"https://graph.org/{help_admin}")
+        button.buildbutton("Admin 🛡️", f"https://graph.org/{help_admin}")
     else:
         button.buildbutton("User", f"https://graph.org/{help_user}")
         button.buildbutton("Admin", f"https://graph.org/{help_admin}")
