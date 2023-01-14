@@ -173,7 +173,7 @@ def get_user_settings(from_user, key=None):
 ├ User TD Mode : <b>{usertdstatus}</b>
 ├ User TeamDrive(s) : <b>{usertds if usertds else usertd}</b>
 ├ Daily Upload : <b>{dailyup} / {dailytlup} per day</b>
-├ Remname : <code>{escape(remname)}</code>
+├ Remname : <b>{escape(remname)}</b>
 '''
     elif key == 'leech':
         prefix = user_dict['prefix'] if user_dict and user_dict.get('prefix') else "Not Exists"
@@ -232,7 +232,7 @@ def get_user_settings(from_user, key=None):
 ├ Leech Split Size : <b>{lsplit}</b>
 ├ Equal Split : <b>{esplits}</b>
 ├ Daily Leech : <b>{dailyll} / {dailytlle} per day</b>
-├ Remname : <code>{escape(remname)}</code>
+├ Remname : <b>{escape(remname)}</b>
 '''
     if uplan == "Paid User" and key:
         ex_date = user_dict.get('expiry_date', False)
