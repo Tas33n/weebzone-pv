@@ -33,7 +33,7 @@ default_values = {'AUTO_DELETE_MESSAGE_DURATION': 30,
                   'START_BTN1_NAME': 'Master',
                   'START_BTN1_URL': 'https://t.me/Nanthakps',
                   'START_BTN2_NAME': 'Support Channel',
-                  'START_BTN2_URL': 'https://t.me/WeebZone_updates',
+                  'START_BTN2_URL': 'https://t.me/KPSTorrent',
                   'AUTHOR_NAME': 'Nanthakps',
                   'AUTHOR_URL': 'https://telegram.me/Nanthakps',
                   'TITLE_NAME': 'Leech Bot',
@@ -46,7 +46,7 @@ default_values = {'AUTO_DELETE_MESSAGE_DURATION': 30,
                   'MULTI_WORKING_PROGRESS_STR': '⬤ ⬤ ⬤ ⬤ ⬤ ⬤ ⬤'.split(' '),
                   'IMAGE_URL': 'https://graph.org/file/6b22ef7b8a733c5131d3f.jpg',
                   'TIMEZONE': 'Asia/Kolkata',
-                  'LIST_MODE': "Telegraph",
+                  'LIST_MODE': "tg_direct",
                   'SEARCH_LIMIT': 0,
                   'SAME_ACC_COOKIES': True,
                   'ENABLE_USR_TD': False,
@@ -315,22 +315,22 @@ def load_config():
     QUEUE_UPLOAD = '' if len(QUEUE_UPLOAD) == 0 else int(QUEUE_UPLOAD)
 
 
-    INCOMPLETE_TASK_NOTIFIER = environ.get('INCOMPLETE_TASK_NOTIFIER', '')
+    INCOMPLETE_TASK_NOTIFIER = environ.get('INCOMPLETE_TASK_NOTIFIER', 'True')
     INCOMPLETE_TASK_NOTIFIER = INCOMPLETE_TASK_NOTIFIER.lower() == 'true'
     if not INCOMPLETE_TASK_NOTIFIER and DATABASE_URL:
         DbManger().trunc_table('tasks')
 
 
-    STOP_DUPLICATE = environ.get('STOP_DUPLICATE', '')
+    STOP_DUPLICATE = environ.get('STOP_DUPLICATE', 'True')
     STOP_DUPLICATE = STOP_DUPLICATE.lower() == 'true'
 
-    VIEW_LINK = environ.get('VIEW_LINK', '')
+    VIEW_LINK = environ.get('VIEW_LINK', 'True')
     VIEW_LINK = VIEW_LINK.lower() == 'true'
 
     SET_BOT_COMMANDS = environ.get('SET_BOT_COMMANDS', '')
     SET_BOT_COMMANDS = SET_BOT_COMMANDS.lower() == 'true'
 
-    IS_TEAM_DRIVE = environ.get('IS_TEAM_DRIVE', '')
+    IS_TEAM_DRIVE = environ.get('IS_TEAM_DRIVE', 'True')
     IS_TEAM_DRIVE = IS_TEAM_DRIVE.lower() == 'true'
 
     USE_SERVICE_ACCOUNTS = environ.get('USE_SERVICE_ACCOUNTS', '')
@@ -428,19 +428,19 @@ def load_config():
     QB_MIRROR_ENABLED = environ.get('QB_MIRROR_ENABLED', '')
     QB_MIRROR_ENABLED = QB_MIRROR_ENABLED.lower() == 'true'
 
-    LEECH_ENABLED = environ.get('LEECH_ENABLED', '')
+    LEECH_ENABLED = environ.get('LEECH_ENABLED', 'True')
     LEECH_ENABLED = LEECH_ENABLED.lower() == 'true'
 
-    WATCH_ENABLED = environ.get('WATCH_ENABLED', '')
+    WATCH_ENABLED = environ.get('WATCH_ENABLED', 'True')
     WATCH_ENABLED = WATCH_ENABLED.lower() == 'true'
 
     CLONE_ENABLED = environ.get('CLONE_ENABLED', '')
     CLONE_ENABLED = CLONE_ENABLED.lower() == 'true'
 
-    ANILIST_ENABLED = environ.get('ANILIST_ENABLED', '')
+    ANILIST_ENABLED = environ.get('ANILIST_ENABLED', 'True')
     ANILIST_ENABLED = ANILIST_ENABLED.lower() == 'true'
 
-    WAYBACK_ENABLED = environ.get('WAYBACK_ENABLED', '')
+    WAYBACK_ENABLED = environ.get('WAYBACK_ENABLED', 'True')
     WAYBACK_ENABLED = WAYBACK_ENABLED.lower() == 'true'
 
     MEDIAINFO_ENABLED = environ.get('MEDIAINFO_ENABLED', '')
@@ -448,7 +448,7 @@ def load_config():
 
     LIST_MODE = environ.get('LIST_MODE', '')
     if len(LIST_MODE) == 0:
-        LIST_MODE = "Telegraph"
+        LIST_MODE = "tg_direct"
 
     EMOJI_THEME = environ.get('EMOJI_THEME', 'True')
     EMOJI_THEME = EMOJI_THEME.lower() == 'true'
@@ -465,7 +465,7 @@ def load_config():
     FORCE_BOT_PM = environ.get('FORCE_BOT_PM', '')
     FORCE_BOT_PM = FORCE_BOT_PM.lower() == 'true'
 
-    SOURCE_LINK = environ.get('SOURCE_LINK', '')
+    SOURCE_LINK = environ.get('SOURCE_LINK', 'True')
     SOURCE_LINK = SOURCE_LINK.lower() == 'true'
     
     SAME_ACC_COOKIES = environ.get('SAME_ACC_COOKIES', '')
@@ -491,7 +491,7 @@ def load_config():
     START_BTN2_URL = environ.get('START_BTN2_URL', '')
     if len(START_BTN2_NAME) == 0 or len(START_BTN2_URL) == 0:   
         START_BTN2_NAME = 'Support Channel'
-        START_BTN2_URL = 'https://t.me/WeebZone_updates'
+        START_BTN2_URL = 'https://t.me/KPSTorrent'
 
     BUTTON_FOUR_NAME = environ.get('BUTTON_FOUR_NAME', '')
     BUTTON_FOUR_URL = environ.get('BUTTON_FOUR_URL', '')
@@ -519,7 +519,7 @@ def load_config():
 
     GDTOT_CRYPT = environ.get('GDTOT_CRYPT', '')
     if len(GDTOT_CRYPT) == 0:
-        GDTOT_CRYPT = ''
+        GDTOT_CRYPT = 'NTJwTk5rL0ZZMkJQZERpL1AzMGdVOFdYcXRJaHFUYlhhcjRwQzBLYnE5RT0%3D'
 
     HUBDRIVE_CRYPT = environ.get('HUBDRIVE_CRYPT', '')
     if len(HUBDRIVE_CRYPT) == 0:

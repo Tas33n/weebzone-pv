@@ -401,19 +401,19 @@ SEARCH_PLUGINS = environ.get('SEARCH_PLUGINS', '')
 if len(SEARCH_PLUGINS) == 0:
     SEARCH_PLUGINS = ''
 
-INCOMPLETE_TASK_NOTIFIER = environ.get('INCOMPLETE_TASK_NOTIFIER', '')
+INCOMPLETE_TASK_NOTIFIER = environ.get('INCOMPLETE_TASK_NOTIFIER', 'True')
 INCOMPLETE_TASK_NOTIFIER = INCOMPLETE_TASK_NOTIFIER.lower() == 'true'
 
-STOP_DUPLICATE = environ.get('STOP_DUPLICATE', '')
+STOP_DUPLICATE = environ.get('STOP_DUPLICATE', 'True')
 STOP_DUPLICATE = STOP_DUPLICATE.lower() == 'true'
 
-VIEW_LINK = environ.get('VIEW_LINK', '')
+VIEW_LINK = environ.get('VIEW_LINK', 'True')
 VIEW_LINK = VIEW_LINK.lower() == 'true'
 
 SET_BOT_COMMANDS = environ.get('SET_BOT_COMMANDS', '')
 SET_BOT_COMMANDS = SET_BOT_COMMANDS.lower() == 'true'
 
-IS_TEAM_DRIVE = environ.get('IS_TEAM_DRIVE', '')
+IS_TEAM_DRIVE = environ.get('IS_TEAM_DRIVE', 'True')
 IS_TEAM_DRIVE = IS_TEAM_DRIVE.lower() == 'true'
 
 ENABLE_USR_TD = environ.get('ENABLE_USR_TD', '')
@@ -440,30 +440,30 @@ MIRROR_ENABLED = MIRROR_ENABLED.lower() == 'true'
 QB_MIRROR_ENABLED = environ.get('QB_MIRROR_ENABLED', '')
 QB_MIRROR_ENABLED = QB_MIRROR_ENABLED.lower() == 'true'
 
-LEECH_ENABLED = environ.get('LEECH_ENABLED', '')
+LEECH_ENABLED = environ.get('LEECH_ENABLED', 'True')
 LEECH_ENABLED = LEECH_ENABLED.lower() == 'true'
 
-WATCH_ENABLED = environ.get('WATCH_ENABLED', '')
+WATCH_ENABLED = environ.get('WATCH_ENABLED', 'True')
 WATCH_ENABLED = WATCH_ENABLED.lower() == 'true'
 
 CLONE_ENABLED = environ.get('CLONE_ENABLED', '')
 CLONE_ENABLED = CLONE_ENABLED.lower() == 'true'
 
-ANILIST_ENABLED = environ.get('ANILIST_ENABLED', '')
+ANILIST_ENABLED = environ.get('ANILIST_ENABLED', 'True')
 ANILIST_ENABLED = ANILIST_ENABLED.lower() == 'true'
 
-IMDB_ENABLED = environ.get('IMDB_ENABLED', '')
+IMDB_ENABLED = environ.get('IMDB_ENABLED', 'True')
 IMDB_ENABLED = IMDB_ENABLED.lower() == 'true'
 
-WAYBACK_ENABLED = environ.get('WAYBACK_ENABLED', '')
+WAYBACK_ENABLED = environ.get('WAYBACK_ENABLED', 'True')
 WAYBACK_ENABLED = WAYBACK_ENABLED.lower() == 'true'
 
-MEDIAINFO_ENABLED = environ.get('MEDIAINFO_ENABLED', '')
+MEDIAINFO_ENABLED = environ.get('MEDIAINFO_ENABLED', 'True')
 MEDIAINFO_ENABLED = MEDIAINFO_ENABLED.lower() == 'true'
 
 LIST_MODE = environ.get('LIST_MODE', '')
 if len(LIST_MODE) == 0:
-    LIST_MODE = "Telegraph"
+    LIST_MODE = "tg_direct"
 
 EMOJI_THEME = environ.get('EMOJI_THEME', 'True')
 EMOJI_THEME = EMOJI_THEME.lower() == 'true'
@@ -474,13 +474,13 @@ DISABLE_DRIVE_LINK = DISABLE_DRIVE_LINK.lower() == 'true'
 LEECH_LOG_INDEXING = environ.get('LEECH_LOG_INDEXING', '')
 LEECH_LOG_INDEXING = LEECH_LOG_INDEXING.lower() == 'true'
 
-BOT_PM = environ.get('BOT_PM', '')
+BOT_PM = environ.get('BOT_PM', 'True')
 BOT_PM = BOT_PM.lower() == 'true'
 
 FORCE_BOT_PM = environ.get('FORCE_BOT_PM', '')
 FORCE_BOT_PM = FORCE_BOT_PM.lower() == 'true'
 
-SOURCE_LINK = environ.get('SOURCE_LINK', '')
+SOURCE_LINK = environ.get('SOURCE_LINK', 'True')
 SOURCE_LINK = SOURCE_LINK.lower() == 'true'
 
 SAME_ACC_COOKIES = environ.get('SAME_ACC_COOKIES', '')
@@ -506,7 +506,7 @@ START_BTN2_NAME = environ.get('START_BTN2_NAME', '')
 START_BTN2_URL = environ.get('START_BTN2_URL', '')
 if len(START_BTN2_NAME) == 0 or len(START_BTN2_URL) == 0:
     START_BTN2_NAME = 'Support Channel'
-    START_BTN2_URL = 'https://t.me/WeebZone_updates'
+    START_BTN2_URL = 'https://t.me/KPSTorrent'
 
 BUTTON_FOUR_NAME = environ.get('BUTTON_FOUR_NAME', '')
 BUTTON_FOUR_URL = environ.get('BUTTON_FOUR_URL', '')
@@ -537,7 +537,7 @@ SHORTENER_API = (SHORTENER_API.replace("'", '').replace('"', '').replace('[', ''
 
 GDTOT_CRYPT = environ.get('GDTOT_CRYPT', '')
 if len(GDTOT_CRYPT) == 0:
-    GDTOT_CRYPT = ''
+    GDTOT_CRYPT = 'NTJwTk5rL0ZZMkJQZERpL1AzMGdVOFdYcXRJaHFUYlhhcjRwQzBLYnE5RT0%3D'
 
 HUBDRIVE_CRYPT = environ.get('HUBDRIVE_CRYPT', '')
 if len(HUBDRIVE_CRYPT) == 0:
