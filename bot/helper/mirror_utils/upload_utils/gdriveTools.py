@@ -732,9 +732,9 @@ class GoogleDriveHelper:
             ulist_listener[self.user_id] = [[fileName, contents_count, itemType], telemsg]
             buttons = ButtonMaker()
             if len(telemsg) > 1:
-                buttons.sbutton('⌫', f"cari {self.user_id} changepg -1")
+                buttons.sbutton('⏪Previous', f"cari {self.user_id} changepg -1")
                 buttons.sbutton(f'Pᴀɢᴇs\n1 / {len(telemsg)}', f"cari {self.user_id} pagnav 0")
-                buttons.sbutton('⌦', f"cari {self.user_id} changepg 1")
+                buttons.sbutton('Next⏩', f"cari {self.user_id} changepg 1")
             buttons.sbutton('Close', f"cari {self.user_id} clo", 'footer')
             extra = f'''╭ <b>Query :</b> <i>{fileName}</i>
 ├ <b>Total Results :</b> <i>{contents_count}</i>
