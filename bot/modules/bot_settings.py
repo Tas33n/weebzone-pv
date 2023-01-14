@@ -342,7 +342,7 @@ def load_config():
     ENABLE_USR_TD = environ.get('ENABLE_USR_TD', '')
     ENABLE_USR_TD = ENABLE_USR_TD.lower() == 'false'
 
-    AS_DOCUMENT = environ.get('AS_DOCUMENT', '')
+    AS_DOCUMENT = environ.get('AS_DOCUMENT', 'True')
     AS_DOCUMENT = AS_DOCUMENT.lower() == 'true'
 
     EQUAL_SPLITS = environ.get('EQUAL_SPLITS', '')

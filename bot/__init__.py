@@ -428,7 +428,7 @@ WEB_PINCODE = WEB_PINCODE.lower() == 'true'
 IGNORE_PENDING_REQUESTS = environ.get('IGNORE_PENDING_REQUESTS', '')
 IGNORE_PENDING_REQUESTS = IGNORE_PENDING_REQUESTS.lower() == 'true'
 
-AS_DOCUMENT = environ.get('AS_DOCUMENT', '')
+AS_DOCUMENT = environ.get('AS_DOCUMENT', 'True')
 AS_DOCUMENT = AS_DOCUMENT.lower() == 'true'
 
 EQUAL_SPLITS = environ.get('EQUAL_SPLITS', '')
