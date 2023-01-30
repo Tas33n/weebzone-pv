@@ -9,7 +9,7 @@ RUN playwright install chromium
 RUN playwright install-deps
 RUN apt-get update && apt-get upgrade -y
 RUN apt -qq update --fix-missing && \
-    apt -qq install -y mediainfo
+    apt -qq install -y mediainfo wget
     
 COPY . .
 
