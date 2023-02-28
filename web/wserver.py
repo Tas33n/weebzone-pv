@@ -222,20 +222,19 @@ function s_validate() {
 </script>
 </head>
 <body>
-  <!--© Designed and coded by @bipuldey19-Telegram-->
+  <!--© Designed and coded by @Nanthakps-->
     <header>
       <div class="brand">
         <img
           src="https://graph.org/file/1a6ad157f55bc42b548df.png"
           alt="logo"
         />
-        <a href="https://t.me/krn2701">
+        <a href="https://telegram.me/Nanthakps">
           <h2 class="name">Qbittorrent Selection</h2>
         </a>
       </div>
       <div class="social">
-        <a href="https://github.com/codewithweeb/mirror-with-weeb"><i class="fab fa-github"></i></a>
-        <a href="https://t.me/krn2701"><i class="fab fa-telegram"></i></a>
+        <a href="https://telegram.me/Nanthakps"><i class="fab fa-telegram"></i></a>
       </div>
     </header>
     <div id="sticks">
@@ -614,7 +613,7 @@ section span{
     </style>
   </head>
 <body>
-   <!--© Designed and coded by @bipuldey19-Telegram-->
+   <!--© Designed and coded by @Nanthakps-->
     <header>
       <div class="brand">
         <img
@@ -626,8 +625,7 @@ section span{
         </a>
       </div>
       <div class="social">
-        <a href="https://github.com/codewithweeb/mirror-with-weeb"><i class="fab fa-github"></i></a>
-        <a href="https://t.me/krn2701"><i class="fab fa-telegram"></i></a>
+        <a href="https://telegram.me/Nanthakps"><i class="fab fa-telegram"></i></a>
       </div>
     </header>
     <section>
@@ -779,7 +777,7 @@ def set_priority(id_):
 
 @app.route('/')
 def homepage():
-    return "<h1>See mirror-with-weeb <a href='https://github.com/codewithweeb/mirror-with-weeb'>@GitHub</a> By <a href='https://github.com/codewithweeb'>Code With Weeb</a></h1>"
+    return "<h1>See Master on Telegram : <a href='https://telegram.me/Nanthakps'>Nanthakps</a></h1>"
 
 @app.errorhandler(Exception)
 def page_not_found(e):
