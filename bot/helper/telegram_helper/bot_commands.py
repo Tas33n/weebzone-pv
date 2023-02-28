@@ -24,7 +24,7 @@ class _BotCommands:
         self.PaidUsersCommand = getCommand('PAID_COMMAND', f'paid{CMD_SUFFIX}')
         self.AddPaidCommand = getCommand('ADDPAID_COMMAND', f'addpaid{CMD_SUFFIX}')
         self.RmPaidCommand = getCommand('RMPAID_COMMAND', f'rmpaid{CMD_SUFFIX}')
-        self.PreNameCommand = getCommand('PRENAME_COMMAND', f'prefix{CMD_SUFFIX}')
+        self.PreNameCommand = getCommand('PRENAME_COMMAND', f'prename{CMD_SUFFIX}')
         self.SufNameCommand = getCommand('SUFFIX_COMMAND', f'suffix{CMD_SUFFIX}')
         self.CaptionCommand = getCommand('CAPTION_COMMAND', f'caption{CMD_SUFFIX}')
         self.UserLogCommand = getCommand('DUMPID_COMMAND', f'dumpid{CMD_SUFFIX}')

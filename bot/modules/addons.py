@@ -19,9 +19,9 @@ def prefix_set(update, context):
             sendMessage(f"Buy Paid Service to Use this Prename Feature.", context.bot, update.message)
             return
     if (BotCommands.PreNameCommand in update.message.text) and (len(update.message.text.split(' ')) == 1):
-        help_msg = "<b>Send prefix after command:</b>"
-        help_msg += f"\n<code>/{BotCommands.PreNameCommand}" + " {prefix}" + "</code>\n"
-        help_msg += "\n<b>By Replying to Message (Including Prefix):</b>"
+        help_msg = "<b>Send prename after command:</b>"
+        help_msg += f"\n<code>/{BotCommands.PreNameCommand}" + " {prename}" + "</code>\n"
+        help_msg += "\n<b>By Replying to Message (Including Prename):</b>"
         help_msg += f"\n<code>/{BotCommands.PreNameCommand}" + " {message}" + "</code>"
         sendMessage(help_msg, context.bot, update.message)
     else:
@@ -39,7 +39,7 @@ def prefix_set(update, context):
         if DB_URI:
             DbManger().user_pre(user_id_, prefix_)
             LOGGER.info(f"User : {user_id_} Prename is Saved in DB")
-        editMessage(f"<u><b><a href='tg://user?id={user_id_}'>{u_men}</a>'s Prefix is Set Successfully 🚀</b></u>\n\n<b>• Prename Text: </b>{txt}", lm)
+        editMessage(f"<u><b><a href='tg://user?id={user_id_}'>{u_men}</a>'s Prename is Set Successfully 🚀</b></u>\n\n<b>• Prename Text: </b>{txt}", lm)
 
 
 def suffix_set(update, context):
