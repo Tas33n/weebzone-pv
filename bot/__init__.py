@@ -163,7 +163,7 @@ LOG_LEECH = set()
 
 try:
     BOT_TOKEN = getConfig('BOT_TOKEN')
-    parent_id = getConfig('GDRIVE_FOLDER_ID')
+    parent_id = getConfig('GDRIVE_ID')
     DOWNLOAD_DIR = getConfig('DOWNLOAD_DIR')
     if not DOWNLOAD_DIR.endswith("/"):
         DOWNLOAD_DIR = DOWNLOAD_DIR + '/'
@@ -292,11 +292,11 @@ else:
     sleep(1.5)
 
 try:
-    BASE_URL = getConfig('BASE_URL_OF_BOT').rstrip("/")
+    BASE_URL = getConfig('BASE_URL').rstrip("/")
     if len(BASE_URL) == 0:
         raise KeyError
 except:
-    log_warning('BASE_URL_OF_BOT not provided!')
+    log_warning('BASE_URL not provided!')
     BASE_URL = None
 try:
     DB_URI = getConfig('DATABASE_URL')
@@ -384,11 +384,11 @@ try:
 except:
     RSS_COMMAND = None
 try:
-    CMD_INDEX = getConfig('CMD_INDEX')
-    if len(CMD_INDEX) == 0:
+    CMD_SUFFIX = getConfig('CMD_SUFFIX')
+    if len(CMD_SUFFIX) == 0:
         raise KeyError
 except:
-    CMD_INDEX = ''
+    CMD_SUFFIX = ''
 try:
     SHOW_LIMITS_IN_STATS = getConfig('SHOW_LIMITS_IN_STATS')
     SHOW_LIMITS_IN_STATS = SHOW_LIMITS_IN_STATS.lower() == 'true'
@@ -606,11 +606,11 @@ try:
 except:
     TIMEZONE = "Asia/Kolkata"
 try:
-    CRYPT = getConfig('CRYPT')
-    if len(CRYPT) == 0:
-        raise KeyError
+    GDTOT_CRYPT = getConfig('GDTOT_CRYPT')
+    if len(GDTOT_CRYPT) == 0:
+        raise GDTOT_CRYPT
 except:
-    CRYPT = None
+    GDTOT_CRYPT = None
 try:
     UNIFIED_EMAIL = getConfig('UNIFIED_EMAIL')
     if len(UNIFIED_EMAIL) == 0:
@@ -758,13 +758,13 @@ except KeyError:
     log_info("CHANNEL_USERNAME not provided! Using default @WeebZone_updates")
     CHANNEL_USERNAME = "WeebZone_updates"
 try:
-    FSUB_CHANNEL_ID = getConfig("FSUB_CHANNEL_ID")
-    if len(FSUB_CHANNEL_ID) == 0:
+    FSUB_IDS = getConfig("FSUB_IDS")
+    if len(FSUB_IDS) == 0:
         raise KeyError
-    FSUB_CHANNEL_ID = int(FSUB_CHANNEL_ID)
+    FSUB_IDS = int(FSUB_IDS)
 except KeyError:
     log_info("CHANNEL_ID not provided! Using default id of @WeebZone_updates")
-    FSUB_CHANNEL_ID = -1001512307861
+    FSUB_IDS = -1001512307861
 try:
     TOKEN_PICKLE_URL = getConfig('TOKEN_PICKLE_URL')
     if len(TOKEN_PICKLE_URL) == 0:
@@ -866,7 +866,7 @@ try:
     TELEGRAPH_STYLE = getConfig('TELEGRAPH_STYLE')
     TELEGRAPH_STYLE = TELEGRAPH_STYLE.lower() == 'true'
 except:
-    TELEGRAPH_STYLE = False
+    TELEGRAPH_STYLE = True
 try:
     PIXABAY_API_KEY = getConfig('PIXABAY_API_KEY')
     if len(PIXABAY_API_KEY) == 0:
