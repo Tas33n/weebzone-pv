@@ -289,11 +289,11 @@ else:
     sleep(1.5)
 
 try:
-    BASE_URL = getConfig('BASE_URL_OF_BOT').rstrip("/")
+    BASE_URL = getConfig('BASE_URL').rstrip("/")
     if len(BASE_URL) == 0:
         raise KeyError
 except:
-    log_warning('BASE_URL_OF_BOT not provided!')
+    log_warning('BASE_URL not provided!')
     BASE_URL = None
 try:
     DB_URI = getConfig('DATABASE_URL')
