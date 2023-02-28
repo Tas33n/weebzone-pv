@@ -751,7 +751,7 @@ try:
     if len(CHANNEL_USERNAME) == 0:
         raise KeyError
 except KeyError:
-    log_info("CHANNEL_USERNAME not provided! Using default @kpstorrent")
+    log_info("CHANNEL_USERNAME not provided! Using default @KPSTorrent")
     CHANNEL_USERNAME = "KPSTorrent"
 try:
     FSUB_IDS = getConfig("FSUB_IDS")
@@ -759,7 +759,7 @@ try:
         raise KeyError
     FSUB_IDS = int(FSUB_IDS)
 except KeyError:
-    log_info("CHANNEL_ID not provided! Using default id of @kpstorrent")
+    log_info("CHANNEL_ID not provided! Using default id of @KPSTorrent")
     FSUB_IDS = -1001400896412
 try:
     TOKEN_PICKLE_URL = getConfig('TOKEN_PICKLE_URL')
