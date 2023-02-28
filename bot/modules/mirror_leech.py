@@ -35,7 +35,7 @@ def _mirror_leech(bot, message, isZip=False, extract=False, isQbit=False, isLeec
 	
     if FSUB:
         try:
-            user = bot.get_chat_member(f"{FSUB_CHANNEL_ID}", message.from_user.id)
+            user = bot.get_chat_member(f"{FSUB_IDS}", message.from_user.id)
             LOGGER.info(user.status)
             if user.status not in ("member", "creator", "administrator", "supergroup"):
                 if message.from_user.username:

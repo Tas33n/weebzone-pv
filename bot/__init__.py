@@ -160,7 +160,7 @@ LOG_LEECH = set()
 
 try:
     BOT_TOKEN = getConfig('BOT_TOKEN')
-    parent_id = getConfig('GDRIVE_FOLDER_ID')
+    parent_id = getConfig('GDRIVE_ID')
     DOWNLOAD_DIR = getConfig('DOWNLOAD_DIR')
     if not DOWNLOAD_DIR.endswith("/"):
         DOWNLOAD_DIR = DOWNLOAD_DIR + '/'
@@ -381,11 +381,11 @@ try:
 except:
     RSS_COMMAND = None
 try:
-    CMD_INDEX = getConfig('CMD_INDEX')
-    if len(CMD_INDEX) == 0:
+    CMD_SUFFIX = getConfig('CMD_SUFFIX')
+    if len(CMD_SUFFIX) == 0:
         raise KeyError
 except:
-    CMD_INDEX = ''
+    CMD_SUFFIX = ''
 try:
     SHOW_LIMITS_IN_STATS = getConfig('SHOW_LIMITS_IN_STATS')
     SHOW_LIMITS_IN_STATS = SHOW_LIMITS_IN_STATS.lower() == 'true'
@@ -603,11 +603,11 @@ try:
 except:
     TIMEZONE = "Asia/Kolkata"
 try:
-    CRYPT = getConfig('CRYPT')
-    if len(CRYPT) == 0:
+    GDTOT_CRYPT = getConfig('GDTOT_CRYPT')
+    if len(GDTOT_CRYPT) == 0:
         raise KeyError
 except:
-    CRYPT = None
+    GDTOT_CRYPT = None
 try:
     UNIFIED_EMAIL = getConfig('UNIFIED_EMAIL')
     if len(UNIFIED_EMAIL) == 0:
@@ -679,15 +679,15 @@ except KeyError:
 try:
     AUTHOR_URL = getConfig('AUTHOR_URL')
     if len(AUTHOR_URL) == 0:
-        AUTHOR_URL = 'https://t.me/Nanthakps'
+        AUTHOR_URL = 'https://telegram.me/Nanthakps'
 except KeyError:
-    AUTHOR_URL = 'https://t.me/Nanthakps'
+    AUTHOR_URL = 'https://telegram.me/Nanthakps'
 try:
     GD_INFO = getConfig('GD_INFO')
     if len(GD_INFO) == 0:
-        GD_INFO = 'Uploaded by Torrent Drive Bot'
+        GD_INFO = 'Uploaded by Leech Bot'
 except KeyError:
-    GD_INFO = 'Uploaded by Torrent Drive Bot'
+    GD_INFO = 'Uploaded by Leech Bot'
 try:
     DISABLE_DRIVE_LINK = getConfig('DISABLE_DRIVE_LINK')
     DISABLE_DRIVE_LINK = DISABLE_DRIVE_LINK.lower() == 'true'
@@ -696,9 +696,9 @@ except KeyError:
 try:
     TITLE_NAME = getConfig('TITLE_NAME')
     if len(TITLE_NAME) == 0:
-        TITLE_NAME = 'Torrent Drive'
+        TITLE_NAME = 'Leech Bot'
 except KeyError:
-    TITLE_NAME = 'Torrent Drive'
+    TITLE_NAME = 'Leech Bot'
 try:
     START_BTN1_NAME = getConfig('START_BTN1_NAME')
     START_BTN1_URL = getConfig('START_BTN1_URL')
@@ -714,8 +714,8 @@ try:
     if len(START_BTN2_NAME) == 0 or len(START_BTN2_URL) == 0:
         raise KeyError
 except:
-    START_BTN2_NAME = 'Mirror Group'
-    START_BTN2_URL = 'https://t.me/TorrentLeechGroup'
+    START_BTN2_NAME = 'Support Channel'
+    START_BTN2_URL = 'https://t.me/KPSTorrent'
 try:
     CREDIT_NAME = getConfig('CREDIT_NAME')
     if len(CREDIT_NAME) == 0:
@@ -725,15 +725,15 @@ except KeyError:
 try:
     NAME_FONT = getConfig('NAME_FONT')
     if len(NAME_FONT) == 0:
-        NAME_FONT = 'code'
+        NAME_FONT = 'i'
 except KeyError:
-    NAME_FONT = 'code'
+    NAME_FONT = 'i'
 try:
     CAPTION_FONT = getConfig('CAPTION_FONT')
     if len(CAPTION_FONT) == 0:
-        CAPTION_FONT = 'code'
+        CAPTION_FONT = 'b'
 except KeyError:
-    CAPTION_FONT = 'code'
+    CAPTION_FONT = 'b'
 try:
     FINISHED_PROGRESS_STR = getConfig('FINISHED_PROGRESS_STR') 
     UN_FINISHED_PROGRESS_STR = getConfig('UN_FINISHED_PROGRESS_STR')
@@ -752,15 +752,15 @@ try:
         raise KeyError
 except KeyError:
     log_info("CHANNEL_USERNAME not provided! Using default @kpstorrent")
-    CHANNEL_USERNAME = "kpstorrent"
+    CHANNEL_USERNAME = "KPSTorrent"
 try:
-    FSUB_CHANNEL_ID = getConfig("FSUB_CHANNEL_ID")
-    if len(FSUB_CHANNEL_ID) == 0:
+    FSUB_IDS = getConfig("FSUB_IDS")
+    if len(FSUB_IDS) == 0:
         raise KeyError
-    FSUB_CHANNEL_ID = int(FSUB_CHANNEL_ID)
+    FSUB_IDS = int(FSUB_IDS)
 except KeyError:
     log_info("CHANNEL_ID not provided! Using default id of @kpstorrent")
-    FSUB_CHANNEL_ID = -1001400896412
+    FSUB_IDS = -1001400896412
 try:
     TOKEN_PICKLE_URL = getConfig('TOKEN_PICKLE_URL')
     if len(TOKEN_PICKLE_URL) == 0:
@@ -852,7 +852,7 @@ except:
 try:
     IMAGE_URL = getConfig('IMAGE_URL')
 except KeyError:
-    IMAGE_URL = 'https://telegra.ph/file/d97b51f6c90761102e0b6.jpg'
+    IMAGE_URL = 'https://graph.org/file/d97b51f6c90761102e0b6.jpg'
 try:
     EMOJI_THEME = getConfig('EMOJI_THEME')
     EMOJI_THEME = EMOJI_THEME.lower() == 'true'
@@ -862,7 +862,7 @@ try:
     TELEGRAPH_STYLE = getConfig('TELEGRAPH_STYLE')
     TELEGRAPH_STYLE = TELEGRAPH_STYLE.lower() == 'true'
 except:
-    TELEGRAPH_STYLE = False
+    TELEGRAPH_STYLE = True
 try:
     PIXABAY_API_KEY = getConfig('PIXABAY_API_KEY')
     if len(PIXABAY_API_KEY) == 0:
