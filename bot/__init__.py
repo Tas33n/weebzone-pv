@@ -763,13 +763,8 @@ try:
         raise KeyError
     FSUB_IDS = int(FSUB_IDS)
 except KeyError:
-<<<<<<< HEAD
     log_info("CHANNEL_ID not provided! Using default id of @KPSTorrent")
     FSUB_CHANNEL_ID = -1001400896412
-=======
-    log_info("CHANNEL_ID not provided! Using default id of @WeebZone_updates")
-    FSUB_IDS = -1001512307861
->>>>>>> 23d392c3e5702a79784eb76cef4e4891c22fae2d
 try:
     TOKEN_PICKLE_URL = getConfig('TOKEN_PICKLE_URL')
     if len(TOKEN_PICKLE_URL) == 0:
