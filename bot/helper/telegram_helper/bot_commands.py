@@ -25,7 +25,7 @@ class _BotCommands:
         self.CaptionCommand = getCommand('CAPTION_COMMAND', f'caption{CMD_SUFFIX}'), f'cap{CMD_SUFFIX}'
         self.UserLogCommand = getCommand('DUMPID_COMMAND', f'dumpid{CMD_SUFFIX}')
         self.StatusCommand = getCommand(f'STATUS_COMMAND', f'status{CMD_SUFFIX}'), f'sts{CMD_SUFFIX}'
-        self.UsersCommand = getCommand(f'USERS_COMMAND', f'kpsusers{CMD_SUFFIX}'), f'usr{CMD_SUFFIX}'
+        self.AuthorizedUsersCommand = getCommand(f'USERS_COMMAND', f'kpsusers{CMD_SUFFIX}'), f'usr{CMD_SUFFIX}'
         self.AuthorizeCommand = getCommand(f'AUTH_COMMAND', f'kpsauthorize{CMD_SUFFIX}'), f'au{CMD_SUFFIX}'
         self.UnAuthorizeCommand = getCommand(f'UNAUTH_COMMAND', f'kpsunauthorize{CMD_SUFFIX}'), f'ua{CMD_SUFFIX}'
         self.AddSudoCommand = getCommand(f'ADDSUDO_COMMAND', f'kpsaddsudo{CMD_SUFFIX}'), f'asd{CMD_SUFFIX}'
