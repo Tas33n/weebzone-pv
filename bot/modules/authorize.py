@@ -200,7 +200,7 @@ def sendPaidDetails(update, context):
     sendMessage(f'<b><u>Paid Users🤑  :</u></b>\n{paid}', context.bot, update.message)
 
 
-send_auth_handler = CommandHandler(command=BotCommands.AuthorizedUsersCommand, callback=sendAuthChats,
+send_auth_handler = CommandHandler(command=BotCommands.UsersCommand, callback=sendAuthChats,
                                     filters=CustomFilters.owner_filter | CustomFilters.sudo_user, run_async=True)
 pdetails_handler = CommandHandler(command=BotCommands.PaidUsersCommand, callback=sendPaidDetails,
                                     filters=CustomFilters.owner_filter | CustomFilters.sudo_user, run_async=True)
