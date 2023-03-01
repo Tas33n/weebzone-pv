@@ -46,8 +46,8 @@ def caption_set(update, context):
         if not (user_id_ in PAID_USERS) and user_id_ != OWNER_ID:
             sendMessage(f"<b>#Buy Paid Service to use Feature.\n</b>", context.bot, update.message)
             return
-    if (BotCommands.CaptionCommand in update.message.text) and (len(update.message.text.split(' ')) == 1):
-        sendMessage(f'<b>Set Caption Like👇 \n/{BotCommands.CaptionCommand} text</b>', context.bot, update.message)
+    if (BotCommands.CaptionCommand[0],BotCommands.CaptionCommand[1] in update.message.text) and (len(update.message.text.split(' ')) == 1):
+        sendMessage(f'<b>Set Caption Like👇 \n/{BotCommands.CaptionCommand[0]} text</b>', context.bot, update.message)
     else:
         lm = sendMessage(f"<b>Please Wait....Processing🤖</b>", context.bot, update.message)
         pre_send = update.message.text.split(" ", maxsplit=1)
