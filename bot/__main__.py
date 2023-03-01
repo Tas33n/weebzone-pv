@@ -295,9 +295,9 @@ help_string_telegraph_admin = f'''
 <br><br>
 • <b>/users</b>: show users settings (Only Owner & Sudo).
 <br><br>
-• <b>/{BotCommands.AddSudoCommand[0]}</b>: Add sudo user (Only Owner)
+• <b>/addsudo</b>: Add sudo user (Only Owner)
 <br><br>
-• <b>/{BotCommands.RmSudoCommand[0]}</b>: Remove sudo users (Only Owner)
+• <b>/rmsudo</b>: Remove sudo users (Only Owner)
 <br><br>
 • <b>/{BotCommands.PaidUsersCommand[0]}</b>: Show Paid users (Only Owner & Sudo)
 <br><br>

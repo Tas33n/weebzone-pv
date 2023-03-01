@@ -44,8 +44,8 @@ class _BotCommands:
         self.UsersCommand = getCommand(f'USERS_COMMAND', f'kpsusers{CMD_SUFFIX}'), f'usr{CMD_SUFFIX}'
         self.AuthorizeCommand = getCommand(f'AUTH_COMMAND', f'kpsauthorize{CMD_SUFFIX}'), f'au{CMD_SUFFIX}'
         self.UnAuthorizeCommand = getCommand(f'UNAUTH_COMMAND', f'kpsunauthorize{CMD_SUFFIX}'), f'ua{CMD_SUFFIX}'
-        self.AddSudoCommand = getCommand(f'ADDSUDO_COMMAND', f'addsudo{CMD_SUFFIX}'), f'asd{CMD_SUFFIX}'
-        self.RmSudoCommand = getCommand(f'RMSUDO_COMMAND', f'rmsudo{CMD_SUFFIX}'), f'rmsd{CMD_SUFFIX}'
+        self.AddSudoCommand = getCommand(f'ADDSUDO_COMMAND', f'kpsaddsudo{CMD_SUFFIX}'), f'asd{CMD_SUFFIX}'
+        self.RmSudoCommand = getCommand(f'RMSUDO_COMMAND', f'kpsrmsudo{CMD_SUFFIX}'), f'rmsd{CMD_SUFFIX}'
         self.PingCommand = getCommand(f'PING_COMMAND', f'ping{CMD_SUFFIX}')
         self.RestartCommand =  getCommand(f'RESTART_COMMAND', f'restart{CMD_SUFFIX}'), f'rst{CMD_SUFFIX}'
         self.StatsCommand = getCommand(f'STATS_COMMAND', f'stats{CMD_SUFFIX}')
