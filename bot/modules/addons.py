@@ -19,7 +19,7 @@ def prename_set(update, context):
             sendMessage(f"<b>#Buy Paid Service to use Feature.\n</b>", context.bot, update.message)
             return
     if (BotCommands.PreNameCommand[0],BotCommands.PreNameCommand[1] in update.message.text) and (len(update.message.text.split(' ')) == 1):
-        sendMessage(f'<b>Set Prename Like👇 \n/{BotCommands.PreNameCommand[0],BotCommands.PreNameCommand[1]} channelName</b>', context.bot, update.message)
+        sendMessage(f'<b>Set Prename Like👇 \n/{BotCommands.PreNameCommand[0]} channelName</b>', context.bot, update.message)
     else:
         lm = sendMessage(f"<b>Please Wait....Processing🤖</b>", context.bot, update.message)
         pre_send = update.message.text.split(" ", maxsplit=1)
