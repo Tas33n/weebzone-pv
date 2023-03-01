@@ -36,7 +36,7 @@ class _BotCommands:
         self.HelpCommand = getCommand('HELP_COMMAND', f'help{CMD_SUFFIX}'), f'hlp{CMD_SUFFIX}'
         self.LogCommand = getCommand('LOG_COMMAND', f'log{CMD_SUFFIX}')
         self.BtSelectCommand = getCommand('BTSEL_COMMAND', f'btsel{CMD_SUFFIX}')
-        self.SpeedCommand = getCommand('SPEEDTEST_COMMAND', f'speedtest{CMD_SUFFIX}'), f'sp{CMD_SUFFIX}'
+        self.SpeedCommand = getCommand('SPEEDTEST_COMMAND', f'speedtest{CMD_SUFFIX}'), f'spd{CMD_SUFFIX}'
         self.CloneCommand = getCommand('CLONE_COMMAND', f'clone{CMD_SUFFIX}'), f'cl{CMD_SUFFIX}'
         self.CountCommand = getCommand('COUNT_COMMAND', f'count{CMD_SUFFIX}')
         self.WatchCommand =  getCommand('WATCH_COMMAND', f'watch{CMD_SUFFIX}'), f'w{CMD_SUFFIX}'
