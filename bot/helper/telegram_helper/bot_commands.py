@@ -48,7 +48,7 @@ class _BotCommands:
         self.DeleteCommand = getCommand('DELETE_COMMAND', f'del{CMD_SUFFIX}')
         self.ShellCommand = getCommand('SHELL_COMMAND', f'shell{CMD_SUFFIX}')
         self.ExecHelpCommand = getCommand('EXEHELP_COMMAND', f'exechelp{CMD_SUFFIX}')
-        self.LeechSetCommand = getCommand('LEECHSET_COMMAND', f'leechset{CMD_SUFFIX}')
+        self.LeechSetCommand = getCommand('LEECHSET_COMMAND', f'leechset{CMD_SUFFIX}'), f'lst{CMD_SUFFIX}'
         self.SetThumbCommand = getCommand('SETTHUMB_COMMAND', f'setthumb{CMD_SUFFIX}'), f'st{CMD_SUFFIX}'
         self.UsageCommand = getCommand('USAGE_COMMAND', f'usage{CMD_SUFFIX}')
         self.LeechCommand = getCommand('LEECH_COMMAND', f'leech{CMD_SUFFIX}'), f'l{CMD_SUFFIX}'
