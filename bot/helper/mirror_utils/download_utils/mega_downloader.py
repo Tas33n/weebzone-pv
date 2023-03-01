@@ -142,15 +142,15 @@ class MegaDownloader:
                 limit = None
                 if ZIP_UNZIP_LIMIT is not None and arch:
                     msg3 = f'Failed, Zip/Unzip limit is {ZIP_UNZIP_LIMIT}GB.\nYour File/Folder size is {get_readable_file_size(file_size)}.'
-                    msg3 += f'\n\n#Buy Paid Service\n#Contact : Admin - @{AUTHOR_NAME} 😎'
+                    msg3 += f'\n#Buy Paid Service'
                     limit = ZIP_UNZIP_LIMIT
                 if LEECH_LIMIT is not None and self.__listener.isLeech:
                     msg3 = f'Failed, Leech limit is {LEECH_LIMIT}GB.\nYour File/Folder size is {get_readable_file_size(file_size)}.'
-                    msg3 += f'\n\n#Buy Paid Service\n#Contact : Admin - @{AUTHOR_NAME} 😎'
+                    msg3 += f'\n#Buy Paid Service'
                     limit = LEECH_LIMIT
                 elif MEGA_LIMIT is not None:
                     msg3 = f'Failed, Mega limit is {MEGA_LIMIT}GB.\nYour File/Folder size is {get_readable_file_size(file_size)}.'
-                    msg3 += f'\n\n#Buy Paid Service\n#Contact : Admin - @{AUTHOR_NAME} 😎'
+                    msg3 += f'\n#Buy Paid Service'
                     limit = MEGA_LIMIT
             else:
                 if STORAGE_THRESHOLD is not None:
@@ -162,15 +162,15 @@ class MegaDownloader:
                 limit = None
                 if ZIP_UNZIP_LIMIT is not None and arch:
                     msg3 = f'Failed, Zip/Unzip limit is {ZIP_UNZIP_LIMIT}GB.\nYour File/Folder size is {get_readable_file_size(file_size)}.'
-                    msg3 += f'\n\n#Buy Paid Service\n#Contact : Admin - @{AUTHOR_NAME} 😎'
+                    msg3 += f'\n#Buy Paid Service'
                     limit = ZIP_UNZIP_LIMIT
                 if LEECH_LIMIT is not None and self.__listener.isLeech:
                     msg3 = f'Failed, Leech limit is {LEECH_LIMIT}GB.\nYour File/Folder size is {get_readable_file_size(file_size)}.'
-                    msg3 += f'\n\n#Buy Paid Service\n#Contact : Admin - @{AUTHOR_NAME} 😎'
+                    msg3 += f'\n#Buy Paid Service'
                     limit = LEECH_LIMIT
                 elif MEGA_LIMIT is not None:
                     msg3 = f'Failed, Mega limit is {MEGA_LIMIT}GB.\nYour File/Folder size is {get_readable_file_size(file_size)}.'
-                    msg3 += f'\n\n#Buy Paid Service\n#Contact : Admin - @{AUTHOR_NAME} 😎'
+                    msg3 += f'\n#Buy Paid Service'
                     limit = MEGA_LIMIT
             if limit is not None:
                 LOGGER.info('Checking File/Folder Size...')

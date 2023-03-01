@@ -16,7 +16,7 @@ def scrapper(update, context):
     user_id_ = update.message.from_user.id
     if PAID_SERVICE is True:
         if not (user_id_ in PAID_USERS) and user_id_ != OWNER_ID:
-            sendMessage(f"<b>Buy Paid Service to Use this Scrape Feature.\n\n#Contact : Admin - @{AUTHOR_NAME} 😎</b>", context.bot, update.message)
+            sendMessage(f"<b>Buy Paid Service to Use this Scrape Feature.\n</b>", context.bot, update.message)
             return
     message:Message = update.effective_message
     link = None

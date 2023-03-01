@@ -186,7 +186,6 @@ def get_readable_message():
                     msg += f"\n<b>├⚡ Speed:</b> {download.speed()}"
                     msg += f"\n<b>├⏳ ETA:</b> {download.eta()}"
                     msg += f"<b> | Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"
-                    msg += f'\n<b>├🧑‍💻 Master :</b> <a href="https://t.me/{AUTHOR_NAME}">{AUTHOR_NAME} 🔥</a>'
                     msg += f"\n<b>├⛓️ Engine :</b> {download.eng()}"
 
                 else:
@@ -195,7 +194,6 @@ def get_readable_message():
                     msg += f"\n<b>├ Speed:</b> {download.speed()}"
                     msg += f"\n<b>├ ETA:</b> {download.eta()}"
                     msg += f"<b> | Elapsed: </b>{get_readable_time(time() - download.message.date.timestamp())}"
-                    msg += f'\n<b>├ Master :</b> <a href="https://t.me/{AUTHOR_NAME}">{AUTHOR_NAME}</a>'
                     msg += f"\n<b>├ Engine :</b> {download.eng()}"
 
                 if hasattr(download, 'seeders_num'):
@@ -230,7 +228,6 @@ def get_readable_message():
             elif download.status() == MirrorStatus.STATUS_SEEDING:
                 if EMOJI_THEME is True:
                     msg += f"\n<b>├📦 Size: </b>{download.size()}"
-                    msg += f'\n<b>├🧑‍💻 Master :</b> <a href="https://t.me/{AUTHOR_NAME}">{AUTHOR_NAME} 🔥</a>'
                     msg += f"\n<b>├⛓️ Engine:</b> <code>qBittorrent v4.4.2</code>"
                     msg += f"\n<b>├⚡ Speed: </b>{download.upload_speed()}"
                     msg += f"\n<b>├🔺 Uploaded: </b>{download.uploaded_bytes()}"
@@ -240,7 +237,6 @@ def get_readable_message():
                     msg += f"\n<b>╰❌ </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
                 else:
                     msg += f"\n<b>├ Size: </b>{download.size()}"
-                    msg += f'\n<b>├ Master :</b> <a href="https://t.me/{AUTHOR_NAME}">{AUTHOR_NAME}</a>'
                     msg += f"\n<b>├ Engine:</b> <code>qBittorrent v4.4.2</code>"
                     msg += f"\n<b>├ Speed: </b>{download.upload_speed()}"
                     msg += f"\n<b>├ Uploaded: </b>{download.uploaded_bytes()}"
@@ -250,7 +246,6 @@ def get_readable_message():
                     msg += f"\n<b>╰ </b><code>/{BotCommands.CancelMirror} {download.gid()}</code>"
             else:
                 if EMOJI_THEME is True:
-                    msg += f'\n<b>├🧑‍💻 Master :</b> <a href="https://t.me/{AUTHOR_NAME}">{AUTHOR_NAME} 🔥</a>'
                     msg += f"\n<b>├⛓️ Engine :</b> {download.eng()}"
                     msg += f"\n<b>╰📐 Size: </b>{download.size()}"
                 else:
@@ -465,12 +460,12 @@ def bot_sys_stats():
        if stats.status() == MirrorStatus.STATUS_SPLITTING:
                 num_split += 1
     stats = f"""
-🖥️ CPU: [ {p_core} / {t_core} Cores ] {cpuUsage}%
-🎮 RAM: [ {mem_a} / {mem_t} ] {mem_p}%
-💾 Disk: [ {free} / {total} ] {disk}%
-🔻 DL : {num_active}   | 🔺 UP : {num_upload}  | ♻️ TOTAL : {tasks}
-
-Made with ❤️ by {CREDIT_NAME} 🔥
+🖥️ CPU: [ {t_core} Cores ] {cpuUsage}%
+🎮 RAM: [ {mem_t} ] {mem_p}%
+💾 Disk: [ {total} ] {disk}%
+🔺 Send: {sent}
+🔻 Recv : {recv}
+♻️ TOTAL : {tasks}
 """
     return stats
 dispatcher.add_handler(

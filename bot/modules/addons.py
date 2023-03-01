@@ -16,7 +16,7 @@ def prename_set(update, context):
 
     if PAID_SERVICE is True:
         if not (user_id_ in PAID_USERS) and user_id_ != OWNER_ID:
-            sendMessage(f"<b>#Buy Paid Service to use Feature.\n\n#Contact : Admin - @{AUTHOR_NAME} 😎</b>", context.bot, update.message)
+            sendMessage(f"<b>#Buy Paid Service to use Feature.\n</b>", context.bot, update.message)
             return
     if (BotCommands.PreNameCommand in update.message.text) and (len(update.message.text.split(' ')) == 1):
         sendMessage(f'<b>Set Prename Like👇 \n/{BotCommands.PreNameCommand} channelName</b>', context.bot, update.message)
@@ -44,7 +44,7 @@ def caption_set(update, context):
 
     if PAID_SERVICE is True:
         if not (user_id_ in PAID_USERS) and user_id_ != OWNER_ID:
-            sendMessage(f"<b>#Buy Paid Service to use Feature.\n\n#Contact : Admin - @{AUTHOR_NAME} 😎</b>", context.bot, update.message)
+            sendMessage(f"<b>#Buy Paid Service to use Feature.\n</b>", context.bot, update.message)
             return
     if (BotCommands.CaptionCommand in update.message.text) and (len(update.message.text.split(' ')) == 1):
         sendMessage(f'<b>Set Caption Like👇 \n/{BotCommands.CaptionCommand} text</b>', context.bot, update.message)
@@ -72,7 +72,7 @@ def userlog_set(update, context):
 
     if PAID_SERVICE is True:
         if not (user_id_ in PAID_USERS) and user_id_ != OWNER_ID:
-            sendMessage(f"<b>#Buy Paid Service to use Feature.\n\n#Contact : Admin - @{AUTHOR_NAME} 😎</b>", context.bot, update.message)
+            sendMessage(f"<b>#Buy Paid Service to use Feature.\n</b>", context.bot, update.message)
             return
     if (BotCommands.UserLogCommand in update.message.text) and (len(update.message.text.split(' ')) == 1):
         sendMessage(f'Send Your Backup Channel ID alone with command like \n\n{BotCommands.UserLogCommand} -100xxxxxxx', context.bot, update.message)

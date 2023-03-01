@@ -151,26 +151,24 @@ def stats(update, context):
     mem_a = get_readable_file_size(memory.available)
     mem_u = get_readable_file_size(memory.used)
     if EMOJI_THEME is True:
-            stats = f'<b>╭《🌐 BOT STATISTICS 🌐》</b>\n' \
+            stats = f'<b>╭─《🌐 BOT STATISTICS 🌐》</b>\n' \
                     f'<b>├ 🛠 Updated On: </b>{last_commit}\n'\
                     f'<b>├ ⌛ Uptime: </b>{currentTime}\n'\
                     f'<b>├ 🟢 OS Uptime: </b>{osUptime}\n'\
-                    f'<b>├ 🖥️ CPU:</b> [ {p_core} / {t_core} Cores ] {cpuUsage}%\n'\
-                    f'<b>├ 🎮 RAM:</b> [ {mem_a} / {mem_t} ] {mem_p}%\n'\
-                    f'<b>├ ✳ SWAP:</b> [ {swap_u} / {swap_t} ] {swap_p}%\n'\
-                    f'<b>├ 💾 Disk:</b> [ {free} / {total} ] {disk}%\n'\
+                    f'<b>├ 🖥️ CPU:</b> [{progress_bar(cpuUsage)}] {cpuUsage}%\n'\
+                    f'<b>├ 🎮 RAM:</b> [{progress_bar(mem_p)}] {mem_p}%\n'\
+                    f'<b>├ 💾 Disk:</b> [{progress_bar(disk)}] {disk}%\n'\
+                    f'<b>├ 💿 Disk Free:</b> {free}\n'\
                     f'<b>├ 🔺 Upload Data:</b> {sent}\n'\
                     f'<b>╰ 🔻 Download Data:</b> {recv}\n\n'
-
     else:
             stats = f'<b>╭─《 BOT STATISTICS 》</b>\n' \
                     f'<b>├  Updated On: </b>{last_commit}\n'\
                     f'<b>├  Uptime: </b>{currentTime}\n'\
                     f'<b>├  OS Uptime: </b>{osUptime}\n'\
-                    f'<b>├  CPU:</b> [ {p_core} / {t_core} Cores ] {cpuUsage}%\n'\
-                    f'<b>├  RAM:</b> [ {mem_a} / {mem_t} ] {mem_p}%\n'\
-                    f'<b>├  SWAP:</b> [ {swap_u} / {swap_t} ] {swap_p}%\n'\
-                    f'<b>├  Disk:</b> [ {free} / {total} ] {disk}%\n'\
+                    f'<b>├  CPU:</b> [{progress_bar(cpuUsage)}] {cpuUsage}%\n'\
+                    f'<b>├  RAM:</b> [{progress_bar(mem_p)}] {mem_p}%\n'\
+                    f'<b>├  Disk:</b> [{progress_bar(disk)}] {disk}%\n'\
                     f'<b>├  Disk Free:</b> {free}\n'\
                     f'<b>├  Upload Data:</b> {sent}\n'\
                     f'<b>╰  Download Data:</b> {recv}\n\n'
@@ -300,9 +298,10 @@ def ping(update, context):
 def log(update, context):
     sendLogFile(context.bot, update.message)
 
-
-help_string = f'<b><a href="https://t.me/{AUTHOR_NAME}">{AUTHOR_NAME}</a></b> - The Ultimate Telegram Mirror-Leech Bot to Upload Your File & Link in Google Drive & Telegram\
-\n\n<b>Choose A Help Category:</b>'
+help_string = '''
+<b><a href='https://t.me/Nanthakps'>Nanthakps</a></b> - The Ultimate Telegram Mirror-Leech Bot to Upload Your File & Link in Google Drive & Telegram\
+\n\n<b>Choose A Help Category:</b>
+'''
 
 help_string_telegraph_user = f'''
 <b><u>👤 User Commands</u></b>
@@ -466,6 +465,7 @@ if SET_BOT_COMMANDS:
         (f'{BotCommands.CancelMirror}','Cancel a task'),
         (f'{BotCommands.SearchCommand}','Search in Torrent'),
         (f'{BotCommands.PingCommand}','Ping the bot'),
+        (f'{BotCommands.RestartCommand}','Restart the bot'),
         (f'{BotCommands.LogCommand}','Get the bot Log'),
         (f'{BotCommands.HelpCommand}','Get detailed help')
     ]
@@ -529,13 +529,11 @@ def main():
                     with open(".restartmsg") as f:
                         chat_id, msg_id = map(int, f)
                     msg = f"😎Restarted successfully❗\n\n"
-                    msg += f"🧑‍💻Master: @{AUTHOR_NAME} 🔥\n"
                     msg += f"📅DATE: {date}\n"
                     msg += f"⌚TIME: {time}\n"
                     msg += f"🌐TIMEZONE: {TIMEZONE}"
                 else:
                     msg = f"😎Bot Restarted!\n\n"
-                    msg += f"🧑‍💻Master: @{AUTHOR_NAME} 🔥\n"
                     msg += f"📅DATE: {date}\n"
                     msg += f"⌚TIME: {time}\n"
                     msg += f"🌐TIMEZONE: {TIMEZONE}"
@@ -566,11 +564,11 @@ def main():
     if ospath.isfile(".restartmsg"):
         with open(".restartmsg") as f:
             chat_id, msg_id = map(int, f)
-        msg = f"😎Restarted successfully❗\n\n🧑‍💻Master: @{AUTHOR_NAME} 🔥\n📅DATE: {date}\n⌚TIME: {time}\n🌐TIMEZONE: {TIMEZONE}"
+        msg = f"😎Restarted successfully❗\n📅DATE: {date}\n⌚TIME: {time}\n🌐TIMEZONE: {TIMEZONE}"
         bot.edit_message_text(msg, chat_id, msg_id)
         osremove(".restartmsg")
     elif not notifier_dict and AUTHORIZED_CHATS:
-        text = f"😎Bot Restarted❗\n\n🧑‍💻Master: @{AUTHOR_NAME} 🔥\n📅DATE: {date} \n⌚TIME: {time} \n🌐TIMEZONE: {TIMEZONE}"
+        text = f"😎Bot Restarted❗\n📅DATE: {date} \n⌚TIME: {time} \n🌐TIMEZONE: {TIMEZONE}"
         for id_ in AUTHORIZED_CHATS:
             try:
                 bot.sendMessage(chat_id=id_, text=text, parse_mode=ParseMode.HTML)

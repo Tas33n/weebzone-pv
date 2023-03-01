@@ -74,9 +74,9 @@ def _mirror_leech(bot, message, isZip=False, extract=False, isQbit=False, isLeec
     if user_id != OWNER_ID and user_id not in SUDO_USERS and user_id not in PAID_USERS:
         if PAID_SERVICE is True:
             if TOTAL_TASKS_LIMIT == total_task:
-                return sendMessage(f"<b>Bot Total Task Limit : {TOTAL_TASKS_LIMIT}\nTasks Processing : {total_task}\n#Total Limit Exceed.\n\n#Buy Paid Service\n#Contact : Admin - @{AUTHOR_NAME} 😎</b>", bot ,message)
+                return sendMessage(f"<b>Bot Total Task Limit : {TOTAL_TASKS_LIMIT}\nTasks Processing : {total_task}\n#Total Limit Exceed.\n#Buy Paid Service</b>", bot ,message)
             if USER_TASKS_LIMIT == get_user_task(user_id):
-                return sendMessage(f"<b>Bot Total Task Limit : {USER_TASKS_LIMIT} \nYour Tasks : {get_user_task(user_id)}\n#User Limit Exceed.\n\n#Buy Paid Service\n#Contact : Admin - @{AUTHOR_NAME} 😎</b>", bot ,message)
+                return sendMessage(f"<b>Bot Total Task Limit : {USER_TASKS_LIMIT} \nYour Tasks : {get_user_task(user_id)}\n#User Limit Exceed.\n#Buy Paid Service</b>", bot ,message)
         else:
             if TOTAL_TASKS_LIMIT == total_task:
                 return sendMessage(f"<b>Bot Total Task Limit : {TOTAL_TASKS_LIMIT}\nTasks Processing : {total_task}\n#Total Limit Exceed.</b>", bot ,message)
