@@ -460,7 +460,7 @@ if SET_BOT_COMMANDS:
         (f'{BotCommands.CloneCommand[0]}','Copy file/folder to Drive'),
         (f'{BotCommands.DeleteCommand}','Delete file/folder from Drive'),
         (f'{BotCommands.CancelMirror[0]}','Cancel a task'),
-        (f'{BotCommands.SearchCommand[0]}','Search in Torrent'),
+        (f'{BotCommands.SearchCommand}','Search in Torrent'),
         (f'{BotCommands.PingCommand}','Ping the bot'),
         (f'{BotCommands.RestartCommand[0]}','Restart the bot'),
         (f'{BotCommands.LogCommand}','Get the bot Log'),
