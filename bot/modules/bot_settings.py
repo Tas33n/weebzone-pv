@@ -23,7 +23,7 @@ default_values = {'AUTO_DELETE_MESSAGE_DURATION': 30,
                   'BOT_PM': True,
                   'FORCE_BOT_PM': False,
                   'UPDATE_PACKAGES': 'False',
-                  'UPSTREAM_BRANCH': 'master',
+                  'UPSTREAM_BRANCH': 'railway',
                   'UPSTREAM_REPO': 'https://github.com/Tamilupdates/weebzone',
                   'STATUS_UPDATE_INTERVAL': 2,
                   'DOWNLOAD_DIR': '/usr/src/app/downloads/',
@@ -416,7 +416,7 @@ def load_config():
 
     UPSTREAM_BRANCH = environ.get('UPSTREAM_BRANCH', '')
     if len(UPSTREAM_BRANCH) == 0:   
-        UPSTREAM_BRANCH = 'master'
+        UPSTREAM_BRANCH = 'railway'
 
     UPDATE_PACKAGES = environ.get('UPDATE_PACKAGES', '')
     if len(UPDATE_PACKAGES) == 0:

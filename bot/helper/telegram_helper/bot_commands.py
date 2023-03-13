@@ -32,7 +32,7 @@ class _BotCommands:
         self.ScrapeCommand = getCommand(f'SCRAPE_COMMAND', f'scrape{CMD_SUFFIX}'), f'scr{CMD_SUFFIX}'
         self.MediaInfoCommand = getCommand(f'MEDIAINFO_COMMAND', f'mediainfo{CMD_SUFFIX}'), f'mi{CMD_SUFFIX}'
         self.UserSetCommand  = getCommand(f'USERSET_COMMAND', f'usetting{CMD_SUFFIX}'), f'us{CMD_SUFFIX}'
-        self.BotSetCommand = getCommand(f'BOT_SETTING', f'kpsbsetting{CMD_SUFFIX}'), f'bst{CMD_SUFFIX}'
+        self.BotSetCommand = getCommand(f'BOT_SETTING', f'bsetting{CMD_SUFFIX}'), f'bst{CMD_SUFFIX}'
         self.CancelMirror = getCommand(f'CANCEL_COMMAND', f'cancel{CMD_SUFFIX}')
         self.CancelAllCommand = getCommand(f'CANCEL_ALL_COMMAND', f'cancelall{CMD_SUFFIX}'), f'ca{CMD_SUFFIX}'
         self.ListCommand = getCommand(f'LIST_COMMAND', f'list{CMD_SUFFIX}'), f'ls{CMD_SUFFIX}'
@@ -41,11 +41,11 @@ class _BotCommands:
         self.PaidUsersCommand = getCommand(f'PAID_COMMAND', f'paid{CMD_SUFFIX}'), f'pd{CMD_SUFFIX}'
         self.AddPaidCommand = getCommand(f'ADDPAID_COMMAND', f'addpaid{CMD_SUFFIX}'), f'apd{CMD_SUFFIX}'
         self.RmPaidCommand = getCommand(f'RMPAID_COMMAND', f'rmpaid{CMD_SUFFIX}'), f'rmpd{CMD_SUFFIX}'
-        self.UsersCommand = getCommand(f'USERS_COMMAND', f'kpsusers{CMD_SUFFIX}'), f'usr{CMD_SUFFIX}'
-        self.AuthorizeCommand = getCommand(f'AUTH_COMMAND', f'kpsauthorize{CMD_SUFFIX}'), f'au{CMD_SUFFIX}'
-        self.UnAuthorizeCommand = getCommand(f'UNAUTH_COMMAND', f'kpsunauthorize{CMD_SUFFIX}'), f'ua{CMD_SUFFIX}'
-        self.AddSudoCommand = getCommand(f'ADDSUDO_COMMAND', f'kpsaddsudo{CMD_SUFFIX}'), f'asd{CMD_SUFFIX}'
-        self.RmSudoCommand = getCommand(f'RMSUDO_COMMAND', f'kpsrmsudo{CMD_SUFFIX}'), f'rmsd{CMD_SUFFIX}'
+        self.UsersCommand = getCommand(f'USERS_COMMAND', f'users{CMD_SUFFIX}'), f'usr{CMD_SUFFIX}'
+        self.AuthorizeCommand = getCommand(f'AUTH_COMMAND', f'authorize{CMD_SUFFIX}'), f'au{CMD_SUFFIX}'
+        self.UnAuthorizeCommand = getCommand(f'UNAUTH_COMMAND', f'unauthorize{CMD_SUFFIX}'), f'ua{CMD_SUFFIX}'
+        self.AddSudoCommand = getCommand(f'ADDSUDO_COMMAND', f'addsudo{CMD_SUFFIX}'), f'asd{CMD_SUFFIX}'
+        self.RmSudoCommand = getCommand(f'RMSUDO_COMMAND', f'rmsudo{CMD_SUFFIX}'), f'rmsd{CMD_SUFFIX}'
         self.PingCommand = getCommand(f'PING_COMMAND', f'ping{CMD_SUFFIX}')
         self.RestartCommand =  getCommand(f'RESTART_COMMAND', f'restart{CMD_SUFFIX}'), f'rst{CMD_SUFFIX}'
         self.StatsCommand = getCommand(f'STATS_COMMAND', f'stats{CMD_SUFFIX}')
