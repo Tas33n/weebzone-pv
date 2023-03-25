@@ -24,7 +24,7 @@ from bot.helper.ext_utils.shortenurl import short_url
 LOGGER = getLogger(__name__)
 getLogger('googleapiclient.discovery').setLevel(ERROR)
 
-SERVICE_ACCOUNTS_NUMBER = 100
+SERVICE_ACCOUNTS_NUMBER = 200
 
 
 class GoogleDriveHelper:
